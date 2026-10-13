@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pakhi 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#F8A8C8;--bg:#FFF4F8;--d:#E85D93;--t:#49323D;--l:#E9DDFB;--sh:0 12px 32px rgba(232,93,147,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;min-height:100%;overflow-x:hidden}
+body{font-family:'Hind Siliguri','Noto Sans Bengali','Segoe UI',sans-serif;color:var(--t);background:linear-gradient(160deg,#FFE3EE,#FFF4F8 45%,#EFE5FC);background-attachment:fixed;-webkit-tap-highlight-color:transparent}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--t:#49323D}}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#hearts i{position:absolute;bottom:-40px;font-style:normal;opacity:.5;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:18px 16px 28px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.panel{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:28px;padding:22px 18px;box-shadow:var(--sh);text-align:center;animation:in .5s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes in{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+h1{font-size:1.35rem;line-height:1.55;margin:8px 0 6px;font-weight:700}
+.sub{margin:0 0 14px;opacity:.8}
+.btn{font:inherit;font-weight:600;border:0;border-radius:999px;min-height:48px;padding:10px 26px;cursor:pointer;transition:transform .15s,box-shadow .2s;color:#fff;background:linear-gradient(135deg,#F48FB9,var(--d));box-shadow:0 8px 20px rgba(232,93,147,.4)}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.95)}
+.btn.alt{background:#fff;color:var(--d);box-shadow:inset 0 0 0 2px var(--p)}
+.btn:disabled{opacity:.6;cursor:wait}
+:focus-visible{outline:3px solid var(--d);outline-offset:3px}
+.yes{font-size:1.25rem;padding:12px 38px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.07);box-shadow:0 10px 28px rgba(232,93,147,.6)}}
+#arena{position:relative;height:190px;margin-top:12px;touch-action:manipulation}
+#yes{position:absolute;left:50%;top:18px;transform:translateX(-50%)}
+#no{position:absolute;left:0;top:0;transition:transform .45s cubic-bezier(.34,1.56,.64,1);touch-action:none}
+.cap{min-height:3em;font-weight:600;color:var(--d);margin:6px 0 0}
+.dots{display:flex;gap:8px;justify-content:center;margin-bottom:6px}
+.dots b{width:9px;height:9px;border-radius:50%;background:var(--l);transition:.3s}.dots b.on{background:var(--d);transform:scale(1.35)}
+label{display:block;text-align:left;font-weight:600;margin:12px 0 4px}
+input,textarea{width:100%;font:inherit;color:var(--t);min-height:48px;padding:10px 14px;border:2px solid var(--p);border-radius:16px;background:#fff}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.err{color:#C0306A;font-weight:600;min-height:1.4em;margin:8px 0 0}
+.nav{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+@media(max-width:339px){.grid{grid-template-columns:1fr}}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+.food{position:relative;font:inherit;background:#fff;border:2px solid #F6DCE7;border-radius:20px;padding:12px 6px;min-height:92px;cursor:pointer;color:var(--t);transition:.2s}
+.food:hover{transform:translateY(-2px)}.food span{display:block;font-size:2.1rem}
+.food.sel{border-color:var(--d);background:#FFEAF3;transform:scale(1.04)}
+.food.sel::after{content:"✓";position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;background:var(--d);color:#fff;font-size:.8rem;line-height:22px}
+.char{width:150px;height:150px;margin:0 auto;animation:bob 3s ease-in-out infinite}
+.char.big{width:170px;height:170px}
+@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.tear{animation:drip 1.4s ease-in infinite}
+@keyframes drip{from{transform:translateY(0);opacity:.9}to{transform:translateY(22px);opacity:0}}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+#card{position:relative;overflow:hidden;border-radius:28px;padding:22px 18px 18px;text-align:center;background:linear-gradient(160deg,#FFD3E5,#FFF1F7 50%,#E9DDFB);box-shadow:var(--sh);border:4px solid #fff;animation:in .7s}
+#card .sp{position:absolute;font-size:1.1rem;animation:tw 2.4s infinite}
+@keyframes tw{50%{opacity:.2;transform:scale(.6)}}
+#card h2{margin:4px 0;font-size:1.6rem;color:var(--d)}
+.info{background:rgba(255,255,255,.78);border-radius:18px;padding:10px 12px;margin:10px 0;text-align:left}
+.info small{display:block;color:var(--d);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips span{background:#FFE6F0;border-radius:999px;padding:4px 10px;font-size:.92rem}
+.msg{white-space:pre-wrap;word-break:break-word}
+.ok{color:#2E8B57;font-weight:600;min-height:1.5em}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}#hearts{display:none}}
+</style>
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+<main id="app"></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+<script>
+const FOODS=[["🍔","Burger"],["🍝","Pasta"],["🍚","Fried Rice"],["🥙","Fuchka"],["🍕","Pizza"],["🍜","Noodles"],["🍗","Fried Chicken"],["🍟","French Fries"],["🍰","Cake"],["🍦","Ice Cream"],["🧋","Milkshake"],["🍩","Donut"]];
+const CAPS=["😊 আমি জানি তুমি Yes বলবে!","আরে পাখি, এমন করছ কেন? 🥺","আমার মনটা ভেঙে যাচ্ছে! 💔","একবার Yes করে দেখো না! 😭","আর পারছি না, Yes চাপো প্লিজ! 😭💗"];
+const KEY="pakhi-draft-v1";
+let S={step:1,emo:0,date:"",time:"",msg:"",foods:[]};
+try{Object.assign(S,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
+if(S.step===1)S.emo=0;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=id=>document.getElementById(id);
+const bn=n=>Number(n).toLocaleString("bn-BD");
+const app=$("app");
+let busy=false;
+
+// floating hearts background
+(()=>{const h=$("hearts");["💗","💕","✨","🌸","💖"].forEach((e,k)=>{for(let i=0;i<3;i++){const s=document.createElement("i");s.textContent=e;s.style.left=(Math.random()*95)+"%";s.style.fontSize=(14+Math.random()*16)+"px";s.style.animationDuration=(9+Math.random()*9)+"s";s.style.animationDelay=(-Math.random()*14)+"s";h.appendChild(s)}})})();
+
+// custom SVG character. emo 0-4 for reactions, -1 = happy blushing
+function char(emo,cls=""){
+  const h=emo===-1;
+  let eyes,mouth,tears="",brow="";
+  if(h)eyes=`<path d="M62 92q13-18 26 0M112 92q13-18 26 0" stroke="#49323D" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+  else if(emo===0)eyes=`<g class="eye"><circle cx="75" cy="92" r="9" fill="#49323D"/><circle cx="72" cy="88" r="3" fill="#fff"/></g><g class="eye"><circle cx="125" cy="92" r="9" fill="#49323D"/><circle cx="122" cy="88" r="3" fill="#fff"/></g>`;
+  else if(emo===1)eyes=`<circle cx="75" cy="90" r="12" fill="#fff" stroke="#49323D" stroke-width="3"/><circle cx="75" cy="90" r="4" fill="#49323D"/><circle cx="125" cy="90" r="12" fill="#fff" stroke="#49323D" stroke-width="3"/><circle cx="125" cy="90" r="4" fill="#49323D"/>`;
+  else if(emo===2)eyes=`<g class="eye"><circle cx="75" cy="92" r="13" fill="#49323D"/><circle cx="70" cy="87" r="5" fill="#fff"/><circle cx="80" cy="97" r="2.5" fill="#fff"/></g><g class="eye"><circle cx="125" cy="92" r="13" fill="#49323D"/><circle cx="120" cy="87" r="5" fill="#fff"/><circle cx="130" cy="97" r="2.5" fill="#fff"/></g>`;
+  else eyes=`<path d="M62 94q13 10 26 0M112 94q13 10 26 0" stroke="#49323D" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+  if(emo>=3){tears=`<ellipse class="tear" cx="70" cy="104" rx="5" ry="8" fill="#6EC6F5"/><ellipse class="tear" cx="130" cy="104" rx="5" ry="8" fill="#6EC6F5" style="animation-delay:.4s"/>`;if(emo===4)tears+=`<ellipse class="tear" cx="80" cy="104" rx="5" ry="8" fill="#6EC6F5" style="animation-delay:.8s"/><ellipse class="tear" cx="120" cy="104" rx="5" ry="8" fill="#6EC6F5" style="animation-delay:1.1s"/>`}
+  if(emo>=2)brow=`<path d="M58 72l24 6M142 72l-24 6" stroke="#49323D" stroke-width="4" stroke-linecap="round"/>`;
+  if(h||emo===0)mouth=`<path d="M86 124q14 16 28 0" stroke="#49323D" stroke-width="5" fill="${h?"#F48FB9":"none"}" stroke-linecap="round"/>`;
+  else if(emo===1)mouth=`<ellipse cx="100" cy="130" rx="7" ry="9" fill="#49323D"/>`;
+  else if(emo===2)mouth=`<path d="M88 134q12-8 24 0" stroke="#49323D" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+  else if(emo===3)mouth=`<path d="M86 138q14-16 28 0" stroke="#49323D" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+  else mouth=`<path d="M82 132q18-8 36 0q-4 20-18 20t-18-20z" fill="#49323D"/><ellipse cx="100" cy="146" rx="9" ry="5" fill="#F48FB9"/>`;
+  return `<svg class="char ${cls}" viewBox="0 0 200 200" role="img" aria-label="cute character"><circle cx="45" cy="48" r="22" fill="#F8A8C8"/><circle cx="155" cy="48" r="22" fill="#F8A8C8"/><circle cx="45" cy="48" r="11" fill="#FFD6E5"/><circle cx="155" cy="48" r="11" fill="#FFD6E5"/><circle cx="100" cy="105" r="75" fill="#FFE3D5"/><path d="M100 22c-14-20-34 2-14 14l14 10 14-10c20-12 0-34-14-14z" fill="#E85D93" transform="translate(0 -8) scale(.8) translate(25 6)"/><ellipse cx="56" cy="114" rx="${h?15:11}" ry="8" fill="#F48FB9" opacity="${h?.75:.45}"/><ellipse cx="144" cy="114" rx="${h?15:11}" ry="8" fill="#F48FB9" opacity="${h?.75:.45}"/>${brow}${eyes}${tears}${mouth}</svg>`;
+}
+
+function dots(n){return `<div class="dots" aria-label="Step ${n} of 4">${[1,2,3,4].map(i=>`<b class="${i<=n?"on":""}"></b>`).join("")}</div>`}
+function go(n){S.step=n;save();render();window.scrollTo(0,0)}
+
+function render(){
+  busy=false;
+  if(S.step===1)step1();else if(S.step===2)step2();else if(S.step===3)step3();else step4();
+}
+
+// ---------- STEP 1
+function step1(){
+  app.innerHTML=`<section class="panel"><div id="chr">${char(S.emo)}</div>
+  <h1>পাখি😘 তুমি কি আমার সাথে দেখা করতে চাও না? যদি দেখা করতে চাও তাহলে</h1>
+  <div id="arena"><button class="btn yes" id="yes">Yes! 💗</button><button class="btn alt" id="no" type="button">No 🙈</button></div>
+  <p class="cap" id="cap" aria-live="polite">${CAPS[S.emo]}</p></section>`;
+  const arena=$("arena"),no=$("no"),yes=$("yes");
+  let last=0,pos={x:0,y:0};
+  function place(init){
+    const A=arena.getBoundingClientRect(),w=no.offsetWidth,h=no.offsetHeight;
+    const y=yes.getBoundingClientRect(),pad=14;
+    const yr={l:y.left-A.left-pad,r:y.right-A.left+pad,t:y.top-A.top-pad,b:y.bottom-A.top+pad};
+    const mx=A.width-w,my=A.height-h;let best=null,bd=-1;
+    for(let i=0;i<40;i++){
+      const x=Math.random()*mx,yy=Math.random()*my;
+      const ov=!(x+w<yr.l||x>yr.r||yy+h<yr.t||yy>yr.b);if(ov)continue;
+      const d=Math.hypot(x-pos.x,yy-pos.y);
+      if(init||d>bd){bd=d;best={x,y:yy};if(init)break}
+    }
+    if(!best)best={x:mx*(pos.x<mx/2?1:0),y:my-0};
+    pos=best;no.style.transform=`translate(${best.x}px,${best.y}px)`;
+  }
+  function flee(){
+    place();const now=Date.now();if(now-last<650)return;last=now;
+    S.emo=Math.min(4,S.emo+1);
+    $("chr").innerHTML=char(S.emo,"shake");$("cap").textContent=CAPS[S.emo];
+  }
+  requestAnimationFrame(()=>{pos={x:arena.clientWidth-no.offsetWidth-4,y:arena.clientHeight-no.offsetHeight-4};place(true)});
+  no.addEventListener("pointerenter",flee);
+  no.addEventListener("pointerdown",e=>{e.preventDefault();flee()});
+  no.addEventListener("touchstart",e=>{e.preventDefault();flee()},{passive:false});
+  no.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();flee()});
+  no.addEventListener("focus",flee);
+  arena.addEventListener("pointermove",e=>{const r=no.getBoundingClientRect();if(Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))<r.width/2+36)flee()});
+  window.addEventListener("resize",()=>{if(S.step===1)place(true)},{once:true});
+  yes.addEventListener("click",()=>{
+    if(busy)return;busy=true;yes.disabled=true;
+    $("chr").innerHTML=char(-1);
+    const r=yes.getBoundingClientRect();
+    for(let i=0;i<12;i++){const s=document.createElement("i");s.textContent=["💗","💖","💕"][i%3];Object.assign(s.style,{position:"fixed",left:(r.left+r.width/2)+"px",top:(r.top)+"px",fontStyle:"normal",fontSize:"24px",pointerEvents:"none",zIndex:9,transition:"all 1s ease-out"});document.body.appendChild(s);
+      requestAnimationFrame(()=>{s.style.transform=`translate(${(Math.random()-.5)*240}px,${-90-Math.random()*160}px) scale(1.4)`;s.style.opacity=0});setTimeout(()=>s.remove(),1050)}
+    setTimeout(()=>go(2),850);
+  });
+}
+
+// ---------- date helpers
+const pad2=n=>String(n).padStart(2,"0");
+const todayStr=()=>{const d=new Date();return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`};
+const openPicker=el=>{try{el.showPicker&&el.showPicker()}catch(e){}};
+function validate(){
+  if(!S.date)return"পাখি, একটা তারিখ বেছে নাও! 📅";
+  if(isNaN(new Date(S.date+"T00:00")))return"তারিখটা ঠিক নেই, আবার বেছে নাও 🥺";
+  if(S.date<todayStr())return"আগের তারিখে তো দেখা হবে না! 🥺";
+  if(!S.time)return"পাখি, একটা সময় বেছে নাও! ⏰";
+  if(S.date===todayStr()){const n=new Date();if(S.time<=`${pad2(n.getHours())}:${pad2(n.getMinutes())}`)return"এই সময়টা তো পেরিয়ে গেছে, পরের কোনো সময় বেছে নাও ⏰"}
+  return"";
+}
+const fmtDate=()=>new Date(S.date+"T00:00").toLocaleDateString("bn-BD",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+const fmtTime=()=>{const[h,m]=S.time.split(":");return new Date(2000,0,1,+h,+m).toLocaleTimeString("bn-BD",{hour:"numeric",minute:"2-digit",hour12:true})};
+
+// ---------- STEP 2
+function step2(){
+  app.innerHTML=`<section class="panel">${dots(2)}<div class="char big" style="animation:none;position:relative">${char(-1)}</div>
+  <h1>আমি জানতাম তুমি দেখা করতে চাও তাইতো YES বাটন ক্লিক করছ 😇</h1>
+  <div class="row"><div><label for="d">📅 তারিখ</label><input id="d" type="date" min="${todayStr()}" value="${S.date}"></div>
+  <div><label for="t">⏰ সময়</label><input id="t" type="time" value="${S.time}"></div></div>
+  <p class="sub" id="pv" style="margin-top:8px"></p>
+  <label for="m">💌 তোমার কথা (ঐচ্ছিক)</label><textarea id="m" maxlength="200" placeholder="আমাকে কিছু বলতে চাও? 💌"></textarea>
+  <p class="err" id="err" role="alert"></p>
+  <div class="nav"><button class="btn alt" id="bk">Back</button><button class="btn" id="nx">Next 💕</button></div></section>`;
+  $("m").value=S.msg;
+  const pv=()=>{$("pv").textContent=(S.date?"📅 "+fmtDate():"")+(S.time?"  ⏰ "+fmtTime():"")};pv();
+  const chk=()=>{$("err").textContent=(S.date&&S.time)?validate():""};
+  $("d").oninput=e=>{S.date=e.target.value;save();pv();chk()};$("d").onclick=()=>openPicker($("d"));
+  $("t").oninput=e=>{S.time=e.target.value;save();pv();chk()};$("t").onclick=()=>openPicker($("t"));
+  $("m").oninput=e=>{S.msg=e.target.value;save()};
+  $("bk").onclick=()=>{S.emo=0;go(1)};
+  $("nx").onclick=()=>{const e=validate();if(e){$("err").textContent=e;return}go(3)};
+}
+
+// ---------- STEP 3
+function step3(){
+  app.innerHTML=`<section class="panel">${dots(3)}<h1>পাখি, দেখা হলে কী কী খাবে বলো তো? 😋</h1><p class="sub">তোমার পছন্দের খাবারগুলো বেছে নাও 💗</p>
+  <div class="grid">${FOODS.map(([e,n],i)=>`<button class="food ${S.foods.includes(i)?"sel":""}" data-i="${i}" aria-pressed="${S.foods.includes(i)}"><span>${e}</span>${n}</button>`).join("")}</div>
+  <p class="sub" id="sum" style="font-weight:600"></p><p class="err" id="warn" aria-live="polite"></p><p class="err" id="err" role="alert"></p>
+  <div class="nav"><button class="btn alt" id="bk">Back</button><button class="btn" id="dn">Done 💕</button></div></section>`;
+  const sum=()=>{$("warn").textContent=S.foods.length>2?"এই নাধান, এত খাওয়ার তুমি খাইতে পারবে?😡":"";$("sum").textContent=S.foods.length?`তুমি বেছে নিয়েছ: ${bn(S.foods.length)}টি খাবার 💗 (${S.foods.map(i=>FOODS[i][1]).join(", ")})`:"";};sum();
+  document.querySelectorAll(".food").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i,k=S.foods.indexOf(i);k>-1?S.foods.splice(k,1):S.foods.push(i);
+    b.classList.toggle("sel");b.setAttribute("aria-pressed",k===-1);$("err").textContent="";save();sum()});
+  $("bk").onclick=()=>go(2);
+  $("dn").onclick=()=>{if(!S.foods.length){$("err").textContent="পাখি, অন্তত একটা খাবার তো বেছে নাও! 🥺";return}go(4)};
+}
+
+function askReset(){
+  const o=document.createElement("div");
+  o.style.cssText="position:fixed;inset:0;z-index:99;background:rgba(73,50,61,.6);display:flex;align-items:center;justify-content:center;padding:20px";
+  o.innerHTML='<div class="panel" role="dialog" aria-modal="true" style="max-width:340px"><h1 style="font-size:1.15rem">সব তথ্য মুছে আবার প্রথম থেকে শুরু করবে? 🥺</h1><div class="nav"><button class="btn alt" id="rn">না, থাক</button><button class="btn" id="ry">হ্যাঁ, শুরু করো 🔄</button></div></div>';
+  document.body.appendChild(o);
+  o.querySelector("#rn").onclick=()=>o.remove();
+  o.querySelector("#ry").onclick=()=>{o.remove();S={step:1,emo:0,date:"",time:"",msg:"",foods:[]};save();render();window.scrollTo(0,0)};
+}
+function dataToBlob(u){const p=u.split(","),m=p[0].match(/:(.*?);/)[1],b=atob(p[1]),a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return new Blob([a],{type:m})}
+function showImg(url){
+  const o=document.createElement("div");
+  o.style.cssText="position:fixed;inset:0;z-index:99;background:rgba(73,50,61,.88);overflow:auto;padding:16px;text-align:center;color:#fff";
+  o.innerHTML='<p style="font-weight:600;margin:4px 0 10px">📸 ছবিটা চেপে ধরে রাখো (লং-প্রেস) → "Save image" / "Add to Photos" দাও। কম্পিউটারে হলে রাইট-ক্লিক → Save image as।</p><img alt="Our Special Date" style="max-width:100%;border-radius:20px;background:#fff"><div style="margin-top:12px"><button class="btn">বন্ধ করো ✖</button></div>';
+  o.querySelector("img").src=url;
+  o.querySelector("button").onclick=()=>o.remove();
+  document.body.appendChild(o);
+}
+// ---------- STEP 4
+function step4(){
+  if(validate()||!S.foods.length){go(2);return}
+  const sp=[[8,10],[85,6],[10,60],[90,50],[6,88],[88,92]].map(([x,y])=>`<span class="sp" style="left:${x}%;top:${y}%">✨</span>`).join("");
+  app.innerHTML=`${dots(4)}<div id="card">${sp}${char(-1,"big")}<h2>Our Special Date 💗</h2><p style="margin:2px 0 8px;font-weight:600">আমাদের সুন্দর একটা দিন হতে যাচ্ছে! 🥰</p>
+  <div class="info"><small>📅 তারিখ</small>${fmtDate()}</div><div class="info"><small>⏰ সময়</small>${fmtTime()}</div>
+  <div class="info"><small>🍽️ খাবার</small><div class="chips">${S.foods.map(i=>`<span>${FOODS[i][0]} ${FOODS[i][1]}</span>`).join("")}</div></div>
+  ${S.msg.trim()?`<div class="info"><small>💌 বার্তা</small><div class="msg" id="cm"></div></div>`:""}
+  <p style="margin:10px 0 0;font-weight:600;color:#E85D93">Made with love 💕</p></div>
+  <div class="nav"><button class="btn" id="sv">Save to Gallery 📸</button><button class="btn alt" id="sh">Share 💌</button><button class="btn alt" id="ag">Start Again 🔄</button></div>
+  <p class="ok" id="st" role="status" style="text-align:center"></p>`;
+  if($("cm"))$("cm").textContent=S.msg.trim();
+  const st=(m,bad)=>{$("st").textContent=m;$("st").style.color=bad?"#C0306A":""};
+  const text=()=>`পাখি 💗 আমাদের দেখা হচ্ছে ${fmtDate()}, ${fmtTime()} এ! খাবার: ${S.foods.map(i=>FOODS[i][0]+" "+FOODS[i][1]).join(", ")} 🥰`;
+  $("sv").onclick=async()=>{
+    const b=$("sv");b.disabled=true;st("ছবি তৈরি হচ্ছে... ⏳");
+    try{
+      if(!window.htmlToImage)throw new Error("lib");
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      const el=$("card"),opt={pixelRatio:3,cacheBust:true,skipFonts:true,backgroundColor:"#FFF4F8"};
+      await htmlToImage.toPng(el,opt); // warm-up so fonts/emoji are ready
+      const url=await htmlToImage.toPng(el,opt);
+      const blob=dataToBlob(url);
+      if(!blob||blob.size<1000)throw new Error("empty");
+      const f=new File([blob],"our-special-date.png",{type:"image/png"});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){
+        try{await navigator.share({files:[f],title:"Our Special Date 💗",text:text()});st("শেয়ার মেনু থেকে 'Save Image' বেছে নিলে ছবিটা গ্যালারিতে সেভ হবে 📸")}
+        catch(e){if(e.name==="AbortError")st("");else{showImg(url);st("ছবি তৈরি হয়েছে ✅ ছবিটা চেপে ধরে সেভ করো।")}}
+      }else{
+        showImg(url);
+        st("ছবি তৈরি হয়েছে ✅ ছবিটা চেপে ধরে সেভ করো।");
+      }
+    }catch(e){console.error(e);st("দুঃখিত, ছবি তৈরি করা গেল না। আবার চেষ্টা করো 🥺",true)}
+    b.disabled=false;
+  };
+  $("sh").onclick=async()=>{
+    try{
+      if(navigator.share){await navigator.share({title:"Our Special Date 💗",text:text()});st("শেয়ার হয়েছে 💌")}
+      else{await navigator.clipboard.writeText(text());st("বিবরণ কপি হয়েছে 📋 এবার যেখানে খুশি পেস্ট করো!")}
+    }catch(e){if(e.name==="AbortError")return;st("শেয়ার বা কপি করা গেল না 🥺",true)}
+  };
+  $("ag").onclick=()=>{
+    askReset();return;
+    S={step:1,emo:0,date:"",time:"",msg:"",foods:[]};save();render();
+  };
+}
+render();
+</script>
+</body>
+</html>
